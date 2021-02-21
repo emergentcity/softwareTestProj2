@@ -18,7 +18,7 @@ public:
 	void setName(std::string name);
 
 	int playlist::getId();
-	void setId(song song);
+	void setId(int id);
 	bool addSongToPlaylist(song song);
 	bool removeSongToPlaylist(int id);
 };

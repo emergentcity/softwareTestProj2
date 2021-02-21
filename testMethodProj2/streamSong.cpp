@@ -5,9 +5,11 @@
 
 using namespace std;
 
+/*
 streamSong::streamSong(const song& song) {
 	song::song(song);
 }
+*/
 
 string streamSong::toString() {
 	string print = "Name: " + this->getName() + ", Artist: " + this->getArtist() +

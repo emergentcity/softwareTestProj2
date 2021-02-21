@@ -7,28 +7,42 @@
 
 using namespace std;
 
+struct user {
+	public:
+		string userName;
+};
+
 int main(int argc, char** argv) {
-	testing::InitGoogleTest(&argc, argv);
+	user account = user();
+	musicLibrary library = musicLibrary();
+	library.createTempSongs();
+	library.createTempPlaylist();
 
 	testing::InitGoogleTest(&argc, argv);
 	string input;
 	startApplication::startBlock();
+	cout << "Enter your name: ";
+	getline(cin, input);
+	account.userName = input;
+	
+	startApplication::homeBlock(account.userName);
 	while (true) {
 
 		cout << endl;
 		cout << "Please enter an Input:" << endl;
+
 		getline(cin, input);
 
 		if (input == "1") {
 			RUN_ALL_TESTS();
 		}
 		else if (input == "2") {
-			startApplication::librarySelectionBlock();
+			while (true) {
+				startApplication::selectionSection(account.userName, library);
+			}
 		}
-		else if (startApplication::checkNumber(input)) {
-			int num = std::stoi(input);
-			cout << "Integer Input Detected: " << input << endl;
-
+		else {
+			cout << "Invalid Input " << input << endl;
 		}
 	}
 }

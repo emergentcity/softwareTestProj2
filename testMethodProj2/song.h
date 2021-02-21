@@ -17,23 +17,18 @@ protected:
 	int id = 0;
 
 public:
-	song() = default;
-	song(const song&);
-	song& operator=(const song&) = default;
 
 	friend class playlist;
 	std::string toString();
 
-	virtual int getId();
-	virtual void setId(int id);
+	int getId();
+	void setId(int id);
 
-	virtual std::string getName();
-	virtual void setName(std::string name);
+	std::string getName();
+	void setName(std::string name);
 
-	virtual std::string getArtist();
-	virtual void setArtist(std::string artist);
-
-	virtual ~song() = default;
+	std::string getArtist();
+	void setArtist(std::string artist);
 
 };
 

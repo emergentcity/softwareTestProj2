@@ -4,9 +4,6 @@
 
 using namespace std;
 
-song::song(const song&) {
-	cout << "Calling Synthetic Copy Constructor" << endl;
-}
 
 string song::toString() {
 	return "";
@@ -21,7 +18,7 @@ void song::setId(int id) {
 }
 
 string song::getName() {
-	cout << "Calling Base Function." << endl;
+
 	return this->name;
 }
 

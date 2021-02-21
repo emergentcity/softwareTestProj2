@@ -19,6 +19,9 @@ public:
 	std::string printSongs();
 	std::string printPlaylists();
 
+	bool createTempSongs();
+	bool createTempPlaylist();
+
 	bool addPlaylist(playlist playlist);
 	bool removePlaylist(int id);
 	bool addSong(song song);

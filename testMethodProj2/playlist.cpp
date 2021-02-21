@@ -20,8 +20,8 @@ int playlist::getId() {
 	return this->id;
 }
 
-void playlist::setId(song song) {
-	this->id = song.id;
+void playlist::setId(int id) {
+	this->id = id;
 }
 
 bool playlist::addSongToPlaylist(song song) {
