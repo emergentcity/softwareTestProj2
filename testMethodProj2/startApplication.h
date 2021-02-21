@@ -43,16 +43,92 @@ public:
 		librarySelectionBlock(userName);
 		string input;
 		getline(cin, input);
+
 		if (input == "1") {
+			string input2;
+			string input3;
+			string input4;
 			listAllSong(library);
+			cout << endl;
+			cout << "Choose Song: ";
+			getline(cin, input2);
+			song chosenSong = library.getSong(std::stoi(input2));
+			cout << "Song: " << chosenSong.getName() << " by " << chosenSong.getArtist() << endl;
+			cout << "1. Create New Song." << endl;
+			cout << "Input: ";
+			getline(cin, input3);
+			if (input3 == "1") {
+
+			}
+			else if (input3 == "2") {
+
+			}
 		}
 		else if (input == "2") {
+			string input2;
+			string input3;
+			string input4;
+			cout << "Type In Song Name: ";
+			getline(cin, input2);
+			searchSongs(library, input2);
+			cout << endl;
+			cout << "Choose Song: ";
+			getline(cin, input3);
+			song chosenSong = library.getSong(std::stoi(input3));
+			cout << "Song: " << chosenSong.getName() << " by " << chosenSong.getArtist() << endl;
+			cout << "1. Create New Song." << endl;
+			cout << "Input: ";
+			getline(cin, input4);
+
+			if (input4 == "1") {
+
+			}
+			else if (input4 == "2") {
+
+			}
 		}
 		else if (input == "3") {
+			string input2;
+			string input3;
+			string input4;
 			listAllPlaylist(library);
+			cout << endl;
+			cout << "Choose Song: ";
+			getline(cin, input2);
+			playlist chosenList = library.getPlaylist(std::stoi(input2));
+			cout << "Playlist: " << chosenList.getName() << endl;
+			cout << "1. Create New Playlist." << endl;
+			cout << "Input: ";
+			getline(cin, input3);
+			if (input3 == "1") {
+
+			}
+			else if (input3 == "2") {
+
+			}
 		}
 		else if (input == "4") {
+			string input2;
+			string input3;
+			string input4;
+			cout << "Type In Playlist Name: ";
+			getline(cin, input2);
+			searchPlaylists(library, input2);
+			cout << endl;
+			cout << "Choose Playlist Name: ";
+			getline(cin, input3);
+			playlist chosenList = library.getPlaylist(std::stoi(input3));
+			cout << "Playlist: " << chosenList.getName() << endl;
+			cout << "1. Create New Playlist." << endl;
+			cout << "Input: ";
+			getline(cin, input4);
+			if (input4 == "1") {
 
+			}
+			else if (input4 == "2") {
+
+			}
+			
 		}
 		return true;
 	}
@@ -61,9 +137,9 @@ public:
 		cout << "|----------------------------------------------------------------------------------------|" << endl;
 		cout << "|          You may do the following in your library: " << userName << "                  |" << endl;
 		cout << "|          1. List All Songs.                                                            |" << endl;
-		cout << "|          2. Search Song Details.                                                       |" << endl;
+		cout << "|          2. Search Song.                                                               |" << endl;
 		cout << "|          3. List All Playlists.                                                        |" << endl;
-		cout << "|          4. Search Playlist Details.                                                   |" << endl;
+		cout << "|          4. Search Playlist.                                                           |" << endl;
 		cout << "|----------------------------------------------------------------------------------------|" << endl;
 		return true;
 	}
@@ -79,6 +155,18 @@ public:
 		library.printPlaylists();
 		return true;
 	}
+
+	static bool searchSongs(musicLibrary library, string search) {
+		library.searchSong(search);
+		return true;
+	}
+
+	static bool searchPlaylists(musicLibrary library, string search) {
+		library.searchPlaylist(search);
+		return true;
+	}
+
+
 };
 
 #endif

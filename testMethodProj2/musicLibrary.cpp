@@ -139,3 +139,37 @@ bool musicLibrary::removeSong(int id) {
 	return true;
 }
 
+bool musicLibrary::searchSong(string search) {
+	for (song song : this->songs) {
+		if (search == song.getName()) {
+			cout << "[" << song.getId() << "] " << song.getName() << " by " << song.getArtist() << endl;
+		}
+	}
+	return true;
+}
+
+bool musicLibrary::searchPlaylist(string search) {
+	for (playlist playlist : this->playlists) {
+		if (search == playlist.getName()) {
+			cout << "[" << playlist.getId() << "] " << playlist.getName() << endl;
+		}
+	}
+	return true;
+}
+
+song musicLibrary::getSong(int id) {
+	for (song song : this-> songs) {
+		if (song.getId() == id) {
+			return song;
+		}
+	}
+}
+
+playlist musicLibrary::getPlaylist(int id) {
+	for (playlist playlist : this->playlists) {
+		if (playlist.getId() == id) {
+			return playlist;
+		}
+	}
+}
+
