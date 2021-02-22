@@ -24,7 +24,7 @@ void playlist::setId(int id) {
 	this->id = id;
 }
 
-bool playlist::addSongToPlaylist(song song) {
+bool playlist::addSongToPlaylist(song& song) {
 	cout << "Adding to playlist." << endl;
 	this->list.push_back(song);
 	return true;
@@ -41,4 +41,12 @@ bool playlist::removeSongToPlaylist(int id) {
 	}
 	this->list = newPlayList;
 	return true;
+}
+
+string playlist::printSongs() {
+	cout << "Contains: " << endl;
+	for (song song : this->list) {
+		cout << song.getName() << " by " << song.getArtist() << endl;
+	}
+	return "";
 }

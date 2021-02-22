@@ -139,6 +139,18 @@ bool musicLibrary::removeSong(int id) {
 	return true;
 }
 
+bool musicLibrary::addSongToPlaylist(song& song, int listId) {
+	
+	for (playlist list : this->playlists) {
+		if (list.getId() == listId) {
+			list.addSongToPlaylist(ref(song));
+			list.printSongs();
+		}
+	}
+
+	return true;
+}
+
 bool musicLibrary::searchSong(string search) {
 	for (song song : this->songs) {
 		if (search == song.getName()) {

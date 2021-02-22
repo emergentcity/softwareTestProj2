@@ -27,6 +27,8 @@ public:
 	bool addSong(song song);
 	bool removeSong(int id);
 
+	bool addSongToPlaylist(song& song, int listId);
+
 	bool searchSong(std::string search);
 	bool searchPlaylist(std::string search);
 

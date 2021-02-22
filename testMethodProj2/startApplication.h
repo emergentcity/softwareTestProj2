@@ -57,6 +57,7 @@ public:
 			cout << "Song: " << chosenSong.getName() << " by " << chosenSong.getArtist() << endl;
 			cout << "1. Create New Song." << endl;
 			cout << "2. Remove Song." << endl;
+			cout << endl;
 			cout << "Input: ";
 			getline(cin, input3);
 			if (input3 == "1") {
@@ -90,6 +91,7 @@ public:
 			cout << "Song: " << chosenSong.getName() << " by " << chosenSong.getArtist() << endl;
 			cout << "1. Create New Song." << endl;
 			cout << "2. Remove Song." << endl;
+			cout << endl;
 			cout << "Input: ";
 			getline(cin, input4);
 
@@ -114,12 +116,15 @@ public:
 			string input4;
 			listAllPlaylist(library);
 			cout << endl;
-			cout << "Choose Song: ";
+			cout << "Type In Playlist Name: ";
 			getline(cin, input2);
 			playlist chosenList = library.getPlaylist(std::stoi(input2));
 			cout << "Playlist: " << chosenList.getName() << endl;
+			library.getPlaylist(chosenList.getId()).printSongs();
 			cout << "1. Create New Playlist." << endl;
-			cout << "2. Remove Song." << endl;
+			cout << "2. Remove Playlist." << endl;
+			cout << "3. Add song to Playlist" << endl;
+			cout << endl;
 			cout << "Input: ";
 			getline(cin, input3);
 			if (input3 == "1") {
@@ -132,6 +137,14 @@ public:
 			else if (input3 == "2") {
 				library.removePlaylist(chosenList.getId());
 				cout << "Playlist Removed!" << endl;
+			}
+			else if (input3 == "3") {
+				listAllSong(library);
+				cout << "Choose song to add to this playlist: ";
+				getline(cin, input4);
+				song& newSong = library.getSong(std::stoi(input4));
+				library.addSongToPlaylist(newSong, chosenList.getId());
+				
 			}
 		}
 		else if (input == "4") {
@@ -147,8 +160,11 @@ public:
 			getline(cin, input3);
 			playlist chosenList = library.getPlaylist(std::stoi(input3));
 			cout << "Playlist: " << chosenList.getName() << endl;
+			library.getPlaylist(chosenList.getId()).printSongs();
 			cout << "1. Create New Playlist." << endl;
-			cout << "2. Remove Song." << endl;
+			cout << "2. Remove Playlist." << endl;
+			cout << "3. Add song to Playlist" << endl;
+			cout << endl;
 			cout << "Input: ";
 			getline(cin, input4);
 			if (input4 == "1") {
@@ -161,6 +177,14 @@ public:
 			else if (input4 == "2") {
 				library.removePlaylist(chosenList.getId());
 				cout << "Playlist Removed!" << endl;
+			}
+			else if (input4 == "3") {
+				listAllSong(library);
+				cout << "Choose song to add to this playlist: ";
+				getline(cin, input5);
+				song newSong = library.getSong(std::stoi(input5));
+				library.getPlaylist(chosenList.getId()).addSongToPlaylist(newSong);
+
 			}
 			
 		}
