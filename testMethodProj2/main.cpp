@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 		}
 		else if (input == "2") {
 			while (true) {
-				startApplication::selectionSection(account.userName, library);
+				startApplication::selectionSection(account.userName, ref(library));
 			}
 		}
 		else {
