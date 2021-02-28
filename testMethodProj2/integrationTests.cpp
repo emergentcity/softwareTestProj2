@@ -2,12 +2,13 @@
 #include "gmock/gmock.h"
 #include "startApplication.h"
 #include "musicLibrary.h"
-//#include "stringClass.cpp"
 #include <string>
 #include <chrono>
 
+/*
 using namespace std;
 using namespace std::chrono;
+*/
 
 musicLibrary library = musicLibrary();
 

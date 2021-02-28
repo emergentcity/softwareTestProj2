@@ -42,6 +42,7 @@
     <ClCompile Include="song.cpp" />
     <ClCompile Include="startApplication.h" />
     <ClCompile Include="streamSong.cpp" />
+    <ClCompile Include="stressTesting.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
