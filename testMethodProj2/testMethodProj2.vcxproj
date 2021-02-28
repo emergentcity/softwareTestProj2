@@ -34,6 +34,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="abstractSong.cpp" />
+    <ClCompile Include="integrationTests.cpp" />
     <ClCompile Include="localSong.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="musicLibrary.cpp" />
